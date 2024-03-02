@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>example5</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <svg width="200" height="200" viewBox="-100 -100 200 200" style="border: 1px dashed #ccc;">
+    <path d="
+    M -70 0 
+    L 70 0 
+    L 25 -40
+    M 70 0
+    L 25 40" fill="none" stroke="#D1495B" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" />
+  </svg>
+  <svg width="30" height="30" viewBox="-15 -15 30 30" style="border: 1px dashed #ccc; cursor: pointer;"
+    onclick="toggleFullPage()">
+    <path id="nofullpage" d="
+    M -10 -6
+    L -10 -10
+    L -6 -10
+    M 10 -6
+    L 10 -10
+    L 6 -10
+    M 10 6
+    L 10 10
+    L 6 10
+    M -10 6
+    L -10 10
+    L -6 10" fill="none" stroke="#000" stroke-linecap="square" stroke-width="2" />
+    <path id="fullpage" d="
+       M -10 -6
+       L -6 -6
+       L -6 -10
+       M 10 -6
+       L 6 -6
+       L 6 -10
+       M 10 6
+       L 6 6
+       L 6 10
+       M -10 6
+       L -6 6
+       L -6 10" fill="none" stroke="transparent" stroke-linecap="square" stroke-width="2" />
+  </svg>
+  <script>
+    const nofullpage = document.querySelector('#nofullpage')
+    const fullpage = document.querySelector('#fullpage')
+    function toggleFullPage() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen()
+        nofullpage.setAttribute('stroke', 'transparent')
+        fullpage.setAttribute('stroke', '#000')
+      } else {
+        document.exitFullscreen()
+        nofullpage.setAttribute('stroke', '#000')
+        fullpage.setAttribute('stroke', 'transparent')
+      }
+    }
+  </script>
+</body>
+
+</html>
