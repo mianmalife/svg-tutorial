@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>example10</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <svg width="200" height="400" viewBox="-100 -200 200 400" 
+  style="margin: 100px;border: 1px dashed #ccc; background-color: lightblue;">
+  <defs>
+    <radialGradient id="light"
+      cx="0.25" cy="0.25" r="1">
+      <stop offset="0%" stop-color="#fff"/>
+      <stop offset="50%" stop-color="#fff"/>
+      <stop offset="100%" stop-color="#d6d6d6"/>
+    </radialGradient>
+  </defs>
+  <circle cx="0" cy="60" r="80" fill="url(#light)"/>
+  <circle cx="0" cy="-40" r="50" fill="url(#light)"/>
+  <circle cx="2" cy="-50" r="5" fill="#000" />
+  <circle cx="22" cy="-50" r="5" fill="#000" />
+  <polygon points="12 -42 50 -35 12 -28" fill="#e66465"/>
+  <line x1="-40" y1="40"
+      x2="-90" y2="-10"
+      stroke="#000"
+      stroke-width="5"/>
+  <line x1="-65" y1="15"
+      x2="-90" y2="10"
+      stroke="#000"
+      stroke-width="5"/>
+</body>
+
+</html>
