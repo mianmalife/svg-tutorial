@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>example18</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .box {
+      offset-path: path("M -200 80 L -40 80 Q 50 80 50 0 A 50 50 0 0 0 -50 0 Q -50 80 50 80 L 200 80");
+      animation: run 6000ms linear 0s infinite;
+    }
+
+    .snow {
+      offset-path: path("M -200 80 L -40 80 Q 50 80 50 0 A 50 50 0 0 0 -50 0 Q -50 80 50 80 L 200 80");
+      animation: run 6000ms linear 1s infinite;
+    }
+
+    .car {
+      offset-path: path("M -200 80 L -40 80 Q 50 80 50 0 A 50 50 0 0 0 -50 0 Q -50 80 50 80 L 200 80");
+      animation: run 6000ms linear 2s infinite;
+    }
+
+    @keyframes run {
+      0% {
+        offset-distance: 0;
+      }
+
+      100% {
+        offset-distance: 100%;
+      }
+    }
+    html, body {
+      height: 100%;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .svgbox {
+      transform: scale(2.5);
+    }
+  </style>
+</head>
+
+<body>
+  <svg width="400" height="200" viewBox="-200 -100 400 200" class="svgbox">
+    <path d="M -200 80 L -40 80 Q 50 80 50 0 A 50 50 0 0 0 -50 0 Q -50 80 50 80 L 200 80" fill="none" stroke="pink"
+      stroke-width="4" />
+    <rect class="box" x="-10" y="-12" width="20" height="10" fill="lightgreen" rx="2" />
+    <path class="snow" d="M -20 -4 L 10 -4 C 20 -4 20 -16 10 -16 M -12 -4 L -12 -12 M 4 -4 L 4 -12 M -17 -12 L 9 -12"
+      fill="none" stroke="orange" stroke-width="4" />
+    <image class="car" href="./car.svg" x="-10" y="-32" height="40" width="20"/>
+  </svg>
+  </svg>
+</body>
+
+</html>
