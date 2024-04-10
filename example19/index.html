@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>example19</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .bell:hover {
+      transform-origin: 0 -20%;
+    }
+    .bell:hover, .bell:hover .bell-tongue {
+      animation: ring 0.5s ease-in-out -0.25s infinite alternate;
+    }
+    @keyframes ring {
+      from {
+        transform: rotate(-10deg);
+      }
+      to {
+        transform: rotate(10deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+<svg width="200" height="200" viewBox="-100 -100 200 200" style="margin: 100px; background-color: pink">
+  <g stroke="#001514" stroke-width="3" class="bell">
+    <circle cx="0" cy="-45" r="8" fill="#4F6D7A" />
+    <circle class="bell-tongue" cx="0" cy="80" r="12" fill="#F79257"/>
+    <path d="M -60 70 L -60 80 L 60 80 L 60 70 Q 50 70 50 40 
+    L 50 30 C 50 -65 -50 -65 -50 30 L -50 40 Q -50 70 -60 70"
+       fill="#FDEA96" />
+  </g>
+</svg>
+</body>
+
+</html>
