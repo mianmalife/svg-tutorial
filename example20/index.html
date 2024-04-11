@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>example20</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .snow.fast{
+      animation: drop 3s linear 0s infinite;
+    }
+    .snow.slow {
+      animation: drop 5s linear 0s infinite;
+    }
+    @keyframes drop {
+      from {
+        transform: translate(0, -100px);
+      }
+      to {
+        transform: translate(0, 100px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+<svg width="200" height="200" viewBox="-100 -100 200 200" style="margin: 100px;">
+  <rect x="-100" y="-100" width="200" height="200" fill="#F1DBC3"/>
+  <circle cx="0" cy="430" r="400" fill="#F8F4E8"/>
+  <defs>
+    <g id="tree">
+      <polygon points="0 -40 -10 20 10 20" fill="#38755b"/>
+      <line x1="0" y1="20"
+          x2="0" y2="30"
+          stroke="#778074"
+          stroke-width="2"/>
+    </g>
+    <circle id="bigSnow" cx="0" cy="0" r="5" fill="#fff"/>
+    <circle id="smallSnow" cx="-10" cy="10" r="3" fill="#fff"/>
+  </defs>
+  <use href="#tree" x="50" y="10" transform="scale(1.5)" />
+  <use href="#tree" x="45" y="10" />
+  <use href="#tree" x="-25" y="10" transform="scale(1.2)" />
+  <use href="#tree" x="-35" y="10" transform="scale(1.8)" />
+  <use href="#bigSnow" class="snow fast" />
+  <use href="#smallSnow" class="snow slow" />
+  <use href="#bigSnow" x="30" y="-10" opacity="0.5" class="snow fast" />
+  <use href="#bigSnow" x="-40" y="-50" opacity="0.5" class="snow fast" />
+  <use href="#bigSnow" x="35" y="50" opacity="0.8" class="snow fast" />
+  <use href="#bigSnow" x="-45" y="10" class="snow fast" />
+  <use href="#bigSnow" x="48" y="-45" opacity="0.9" class="snow fast" />
+  <use href="#bigSnow" x="-50" y="-30" class="snow fast" />
+  <use href="#bigSnow" x="55" y="20" opacity="0.5"  class="snow fast"/>s
+  <use href="#smallSnow" x="30" y="-10" opacity="0.5" class="snow slow" />
+  <use href="#smallSnow" x="-40" y="-50" opacity="0.5" class="snow slow" />
+  <use href="#smallSnow" x="35" y="50" opacity="0.8" class="snow slow" />
+  <use href="#smallSnow" x="-45" y="10" class="snow slow"/>
+</svg>
+</body>
+
+</html>
