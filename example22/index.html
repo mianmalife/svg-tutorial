@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>example22</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <svg width="200" height="200" viewBox="-100 -100 200 200" style="background-color: #CD803D; margin: 100px;">
+    <circle cx="0" cy="0" r="55" fill="#fff" stroke="#FCCE7B" stroke-width="10" />
+    <circle cx="0" cy="0" r="45" fill="none" stroke="#B6705F" stroke-width="6" stroke-dasharray="6 17.56194490192345"
+      stroke-dashoffset="3" />
+    <line x1="0" y1="0" x2="0" y2="-28" stroke="#5f4c6c" stroke-width="8" stroke-linecap="round" class="minutes" />
+    <line x1="0" y1="0" x2="0" y2="-20" stroke="#5f4c6c" stroke-width="8" stroke-linecap="round" class="hour" />
+    <line x1="0" y1="0" x2="0" y2="-35" stroke="#5f4c6c" stroke-width="4" stroke-linecap="round" class="second" />
+  </svg>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const hour = document.querySelector('.hour')
+      const minutes = document.querySelector('.minutes')
+      const second = document.querySelector('.second')
+      function transformFunction() {
+        const h = new Date().getHours() % 12
+        const m = new Date().getMinutes()
+        const s = new Date().getSeconds()
+        hour.setAttribute('transform', `rotate(${h * 30})`)
+        minutes.setAttribute('transform', `rotate(${m * 6})`)
+        second.setAttribute('transform', `rotate(${s * 6})`)
+        requestAnimationFrame(transformFunction)
+      }
+      requestAnimationFrame(transformFunction)
+    })
+  </script>
+</body>
+
+</html>
